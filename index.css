@@ -1,0 +1,69 @@
+body
+{
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header
+{
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: white;
+}
+
+.dropdown-icon
+{
+    background-image: url("dropdown.png");
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+}
+
+.string-hasher-dropdown
+{
+    background-color: cadetblue;
+    width: fit-content;
+    position: relative;
+    border-color: black;
+    border-style: solid;
+    display: none;
+}
+
+.hasher-buttons
+{
+    width: 100%;
+}
+
+.encode-decode
+{
+    position: relative;
+    top: 40px;
+}
+
+.string-hasher
+{
+    position: relative;
+    top: 40px;
+}
+
+.test1
+{
+    position: relative;
+    top: 40px;
+}
+
+.test2
+{
+    position: relative;
+    top: 40px;
+}
+
+.anchor-tags
+{
+    text-decoration: none;
+    color: white;
+}

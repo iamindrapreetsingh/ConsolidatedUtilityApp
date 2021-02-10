@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="all.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="all.js"></script>
+</head>
+<body>
+    <div class="header">
+
+        <div class="encode-decode-header">
+            <img src="dropdown.png" height="15px">
+            <span class="encode-decode-link">BASE64 ENCODE/DECODE</span>
+        </div>
+
+        <div class="string-hasher">
+            <img src="dropdown.png" height="15px">  
+            <span>STRING HASHER</span>
+            <div class="string-hasher-dropdown">
+                <input class="hasher-buttons" type="button" value="MD5 HASHER">
+                <br>
+                <input class="hasher-buttons" type="button" value="SHA1 HASHER">
+                <br>
+                <input class="hasher-buttons" type="button" value="SHA 256 HASHER">
+                <br>
+                <input class="hasher-buttons" type="button" value="SHA 512 HASHER">
+            </div>
+        </div>
+
+        <div class="test1">
+            <img src="dropdown.png" height="15px">  
+            <span>STRING HASHER</span>
+        </div>
+
+        <div class="test2">
+            <img src="dropdown.png" height="15px">  
+            <span>STRING HASHER</span>
+        </div>
+
+    </div>
+
+    <div style="display: none;" class="encoder-decoder-flex-div">
+    <div class="encoder-decoder-main-section">
+        <div class="buttons">
+          <div class="encode-btn-div">
+            <input class="encode-btn" type="button" value="Encode" />
+          </div>
+          <div class="decode-btn-div">
+            <input class="decode-btn" type="button" value="Decode" />
+          </div>
+        </div>
+        <div class="input-section">
+          <textarea
+            class="textarea-input"
+            placeholder="Input your String"
+          ></textarea>
+        </div>
+        <div class="output-section">
+          <div class="output-msg">ENCODED URL:</div>
+          <textarea readonly class="textarea-output"></textarea>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="hasher-flex-div">
+        <div class="hasher-main-section">
+              <div class="decode-btn-div">
+                <input class="decode-btn" type="button" value="Click to Hash"/>
+              </div>
+            </div>
+            <div class="input-section">
+              <textarea
+                class="textarea-input"
+                placeholder="Input your String"
+              ></textarea>
+            </div>
+            <div class="output-section">
+              <div class="output-msg">HASHED STRING:</div>
+              <textarea readonly class="textarea-output"></textarea>
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>
