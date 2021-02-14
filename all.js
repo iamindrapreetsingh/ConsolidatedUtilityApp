@@ -157,7 +157,7 @@ selectUtility = (param) => {
       reverseActionBtn.value = `${clickTo} DECODE`;
       outputMsg.innerHTML = "ENCODED URL:";
       reverseActionBtn.style.display = "inline";
-      utilityInfo.innerHTML = "ENCODER &#8644 DECODER";
+      utilityInfo.innerHTML = "BASE64 ENCODER &#8644 DECODER";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
       break;
