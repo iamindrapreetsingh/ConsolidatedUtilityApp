@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All in One Utility App</title>
     <script defer src="all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>    
+<script>
+</script>
 </head>
 <body>
     <div class="header">
@@ -20,42 +23,50 @@
             <img src="dropdown.png" height="15px">  
             <span>STRING HASHER</span>
             <div class="string-hasher-dropdown">
-                <input class="hasher-buttons" type="button" value="MD5 HASHER">
+                <input class="hasher-buttons md5-btn-link" type="button" value="MD5 HASHER">
                 <br>
-                <input class="hasher-buttons" type="button" value="SHA1 HASHER">
+                <input class="hasher-buttons sha1-btn-link" type="button" value="SHA1 HASHER">
                 <br>
-                <input class="hasher-buttons" type="button" value="SHA 256 HASHER">
+                <input class="hasher-buttons sha256-btn-link" type="button" value="SHA 256 HASHER">
                 <br>
-                <input class="hasher-buttons" type="button" value="SHA 512 HASHER">
+                <input class="hasher-buttons sha512-btn-link" type="button" value="SHA 512 HASHER">
             </div>
         </div>
 
-        <div class="test1">
+        <div class="unit-converter">
             <img src="dropdown.png" height="15px">  
-            <span>STRING HASHER</span>
-        </div>
-
-        <div class="test2">
-            <img src="dropdown.png" height="15px">  
-            <span>STRING HASHER</span>
+            <span>UNIT CONVERTER</span>
+            <div style="display: none;" class="unit-converter-dropdown">
+              <input class="hasher-buttons miles-km-link" type="button" value="MILES &#8644 KM">
+              <br>
+              <input class="hasher-buttons fah-cel-link" type="button" value="FAH &#8644 CEL">
+              <br>
+              <input class="hasher-buttons acre-sqft-link" type="button" value="ACRE &#8644 SQFT">
+              <br>
+              <input class="hasher-buttons hr-sec-link" type="button" value="HR &#8644 SEC">
+          </div>
         </div>
 
     </div>
 
-    <div style="display: none;" class="encoder-decoder-flex-div">
-    <div class="encoder-decoder-main-section">
+    <div class="outer-flex-div">
+      <div class="utility-info"> BASE64 ENCODER &#8644 DECODER  </div>
+    <div class="main-section">
         <div class="buttons">
-          <div class="encode-btn-div">
-            <input class="encode-btn" type="button" value="Encode" />
+          <div class="front-action-div">
+            <input class="front-action-btn" type="button" value="Encode" />
           </div>
-          <div class="decode-btn-div">
-            <input class="decode-btn" type="button" value="Decode" />
+          <div class="reverse-action-div">
+            <input class="reverse-action-btn" type="button" value="Decode" />
           </div>
+        </div>
+        <div class="hash-btn-div">
+          <input class="hash-btn" type="button"/>
         </div>
         <div class="input-section">
           <textarea
             class="textarea-input"
-            placeholder="Input your String"
+            placeholder="Provide your input !"
           ></textarea>
         </div>
         <div class="output-section">
@@ -64,26 +75,5 @@
         </div>
     </div>
     </div>
-
-
-    <div class="hasher-flex-div">
-        <div class="hasher-main-section">
-              <div class="decode-btn-div">
-                <input class="decode-btn" type="button" value="Click to Hash"/>
-              </div>
-            </div>
-            <div class="input-section">
-              <textarea
-                class="textarea-input"
-                placeholder="Input your String"
-              ></textarea>
-            </div>
-            <div class="output-section">
-              <div class="output-msg">HASHED STRING:</div>
-              <textarea readonly class="textarea-output"></textarea>
-            </div>
-        </div>
-        </div>
-
 </body>
 </html>

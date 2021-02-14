@@ -1,153 +1,128 @@
-body
-{
-    margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: cornflowerblue;
+body {
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: cornflowerblue;
 }
 
-.header
-{
-    background-color: black;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: white;
+.header {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
 }
 
-.dropdown-icon
-{
-    background-image: url("dropdown.png");
-    background-size: contain;
-    height: 40px;
-    width: 40px;
+.dropdown-icon {
+  background-image: url("dropdown.png");
+  background-size: contain;
+  height: 40px;
+  width: 40px;
 }
 
-.string-hasher-dropdown
-{
-    background-color: cadetblue;
-    width: fit-content;
-    position: relative;
-    border-color: black;
-    border-style: solid;
-    display: none;
+.string-hasher-dropdown {
+  background-color: cadetblue;
+  width: fit-content;
+  position: relative;
+  border-color: black;
+  border-style: solid;
+  display: none;
+  z-index: 1;
 }
 
-.hasher-buttons
-{
-    width: 100%;
+.unit-converter-dropdown {
+  background-color: cadetblue;
+  width: fit-content;
+  position: relative;
+  border-color: black;
+  border-style: solid;
+  display: block;
+  z-index: 1;
 }
 
-
-.string-hasher
-{
-    position: relative;
-    top: 40px;
+.string-hasher {
+  position: relative;
+  top: 40px;
 }
 
-.test1
-{
-    position: relative;
-    top: 40px;
+.unit-converter {
+  position: relative;
+  top: 40px;
 }
 
-.test2
-{
-    position: relative;
-    top: 40px;
+.hasher-buttons {
+  width: 100%;
 }
 
-.header
-{
-    background-color: black;
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    color: white;
+.hasher-buttons:hover {
+  cursor: pointer;
 }
 
-.dropdown-icon
-{
-    background-image: url("dropdown.png");
-    background-size: contain;
-    height: 40px;
-    width: 40px;
+.encode-decode-header {
+  position: relative;
+  top: 40px;
 }
 
-.string-hasher-dropdown
-{
-    background-color: cadetblue;
-    width: fit-content;
-    position: relative;
-    border-color: black;
-    border-style: solid;
-    display: none;
+.encode-decode-link:hover {
+  cursor: pointer;
 }
 
-.hasher-buttons
-{
-    width: 100%;
+.outer-flex-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.encode-decode-header
-{
-    position: relative;
-    top: 40px;
-}
-
-.string-hasher
-{
-    position: relative;
-    top: 40px;
-}
-
-.test1
-{
-    position: relative;
-    top: 40px;
-}
-
-.test2
-{
-    position: relative;
-    top: 40px;
-}
-
-.encoder-decoder-flex-div
-{
-    display: none;
-    align-items: center;
-    flex-direction: column;
-}
-
-.encoder-decoder-main-section {
-  background-color: darkcyan;
+.main-section {
   height: fit-content;
   width: fit-content;
   margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.encode-btn-div {
+.front-action-div {
   display: inline;
 }
 
-.decode-btn-div {
+.reverse-action-div {
   display: inline;
 }
 
-.encode-btn {
+.hash-btn-div {
+  display: none;
+  background-color: green;
+}
+
+.front-action-btn {
   background-color: green;
   height: 50px;
   width: 200px;
+  font-size: 13px;
+  font-weight: bolder;
 }
 
-.decode-btn {
+.reverse-action-btn {
   background-color: thistle;
   height: 50px;
   width: 200px;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.hash-btn {
+  background-color: thistle;
+  height: 50px;
+  width: 407px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.hash-btn-div {
+  border-radius: 12px;
+  border-color: black;
 }
 
 .output-section {
@@ -160,22 +135,63 @@ body
   font-size: 20px;
   text-align: center;
   font-weight: bolder;
+  border-color: black;
+  border-radius: 10px;
 }
 
 .textarea-input {
   width: 400px;
   height: 150px;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 10px 10px black;
 }
 
 .textarea-output {
   width: 400px;
   height: 150px;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: 10px 10px black;
 }
 
-.hasher-flex-div
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.utility-info {
+  position: relative;
+  font-size: 40px;
+  top: 40px;
+}
+
+@media (max-width: 600px) {
+  .textarea-input {
+    width: 300px;
+  }
+
+  .textarea-output {
+    width: 300px;
+  }
+
+  .front-action-btn {
+    width: 150px;
+    font-size: 10px;
+  }
+
+  .reverse-action-btn {
+    width: 150px;
+    font-size: 10px;
+  }
+
+  .header {
+    font-size: 10px;
+  }
+
+  .hash-btn {
+    width: 305px;
+  }
+}
+
+@media (max-width: 700px) {
+  .utility-info {
+    font-size: 20px;
+    top: 15px;
+  }
 }
