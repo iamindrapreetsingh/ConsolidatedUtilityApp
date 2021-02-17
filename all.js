@@ -155,7 +155,7 @@ selectUtility = (param) => {
     case "ENCODE_DECODE":
       frontActionBtn.value = `${clickTo} ENCODE`;
       reverseActionBtn.value = `${clickTo} DECODE`;
-      outputMsg.innerHTML = "ENCODED URL:";
+      outputMsg.innerHTML = "ENCODED URL";
       reverseActionBtn.style.display = "inline";
       utilityInfo.innerHTML = "BASE64 ENCODER &#8644 DECODER";
       btn.style.display = "block";
@@ -163,28 +163,28 @@ selectUtility = (param) => {
       break;
     case "MD5_HASH":
       hashBtn.value = `${clickTo} MD5 HASH`;
-      outputMsg.innerHTML = "MD5 HASHED STRING:";
+      outputMsg.innerHTML = "MD5 HASHED STRING";
       utilityInfo.innerHTML = "MD5 HASHER";
       btn.style.display = "none";
       hashBtnDiv.style.display = "block";
       break;
     case "SHA1_HASH":
       hashBtn.value = `${clickTo} SHA1 HASH`;
-      outputMsg.innerHTML = "SHA1 HASHED STRING:";
+      outputMsg.innerHTML = "SHA1 HASHED STRING";
       utilityInfo.innerHTML = "SHA1 HASHER";
       btn.style.display = "none";
       hashBtnDiv.style.display = "block";
       break;
     case "SHA256_HASH":
       hashBtn.value = `${clickTo} SHA256 HASH`;
-      outputMsg.innerHTML = "SHA256 HASHED STRING:";
+      outputMsg.innerHTML = "SHA256 HASHED STRING";
       utilityInfo.innerHTML = "SHA256 HASHER";
       btn.style.display = "none";
       hashBtnDiv.style.display = "block";
       break;
     case "SHA512_HASH":
       hashBtn.value = `${clickTo} SHA512 HASH`;
-      outputMsg.innerHTML = "SHA512 HASHED STRING:";
+      outputMsg.innerHTML = "SHA512 HASHED STRING";
       utilityInfo.innerHTML = "SHA512 HASHER";
       btn.style.display = "none";
       hashBtnDiv.style.display = "block";
@@ -193,7 +193,7 @@ selectUtility = (param) => {
       frontActionBtn.value = "CONVERT MILES TO KM";
       reverseActionBtn.value = "CONVERT KM TO MILES";
       reverseActionBtn.style.display = "inline";
-      outputMsg.innerHTML = "RESULT IN KMS:";
+      outputMsg.innerHTML = "RESULT IN KMS";
       utilityInfo.innerHTML = "MILES &#8644 KM";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
@@ -202,7 +202,7 @@ selectUtility = (param) => {
       frontActionBtn.value = "CONVERT FAH TO CEL";
       reverseActionBtn.value = "CONVERT CEL TO FAH";
       reverseActionBtn.style.display = "inline";
-      outputMsg.innerHTML = "RESULT IN CELCIUS:";
+      outputMsg.innerHTML = "RESULT IN CELCIUS";
       utilityInfo.innerHTML = "FAHRENHEIT &#8644 CELCIUS";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
@@ -211,7 +211,7 @@ selectUtility = (param) => {
       frontActionBtn.value = "CONVERT ACRE TO SQFT";
       reverseActionBtn.value = "CONVERT SQFT TO ACRE";
       reverseActionBtn.style.display = "inline";
-      outputMsg.innerHTML = "RESULT IN SQUARE FEET:";
+      outputMsg.innerHTML = "RESULT IN SQUARE FEET";
       utilityInfo.innerHTML = "ACRE &#8644 SQUAREFOOT";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
@@ -220,7 +220,7 @@ selectUtility = (param) => {
       frontActionBtn.value = "CONVERT HOUR TO SEC";
       reverseActionBtn.value = "CONVERT SEC TO HOUR";
       reverseActionBtn.style.display = "inline";
-      outputMsg.innerHTML = "RESULT IN SECONDS:";
+      outputMsg.innerHTML = "RESULT IN SECONDS";
       utilityInfo.innerHTML = "HOUR &#8644 SECOND";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
@@ -239,49 +239,49 @@ frontAction = () => {
       if (textInput.value !== "") {
         textOutput.value = CryptoJS.MD5(textInput.value);
       }
-      outputMsg.innerHTML = "MD5 HASHED STRING:";
+      outputMsg.innerHTML = "MD5 HASHED STRING";
       break;
     case "SHA1_HASH":
       if (textInput.value !== "") {
         textOutput.value = CryptoJS.SHA1(textInput.value);
       }
-      outputMsg.innerHTML = "SHA1 HASHED STRING:";
+      outputMsg.innerHTML = "SHA1 HASHED STRING";
       break;
     case "SHA256_HASH":
       if (textInput.value !== "") {
         textOutput.value = CryptoJS.SHA256(textInput.value);
       }
-      outputMsg.innerHTML = "SHA256 HASHED STRING:";
+      outputMsg.innerHTML = "SHA256 HASHED STRING";
       break;
     case "SHA512_HASH":
       if (textInput.value !== "") {
         textOutput.value = CryptoJS.SHA512(textInput.value);
       }
-      outputMsg.innerHTML = "SHA512 HASHED STRING:";
+      outputMsg.innerHTML = "SHA512 HASHED STRING";
       break;
     case "MILES_KM":
       if (textInput.value !== "") {
         textOutput.value = mileToKm(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN KMS:";
+      outputMsg.innerHTML = "RESULT IN KMS";
       break;
     case "FAH_CEL":
       if (textInput.value !== "") {
         textOutput.value = fahToCel(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN CELCIUS:";
+      outputMsg.innerHTML = "RESULT IN CELCIUS";
       break;
     case "ACRE_SQFT":
       if (textInput.value !== "") {
         textOutput.value = acreToSquareft(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN SQUARE FEET:";
+      outputMsg.innerHTML = "RESULT IN SQUARE FEET";
       break;
     case "HR_SEC":
       if (textInput.value !== "") {
         textOutput.value = hrToSec(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN SECONDS:";
+      outputMsg.innerHTML = "RESULT IN SECONDS";
       break;
   }
 };
@@ -296,40 +296,40 @@ reverseAction = () => {
       if (textInput.value !== "") {
         textOutput.value = kmToMile(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN MILES:";
+      outputMsg.innerHTML = "RESULT IN MILES";
       break;
     case "FAH_CEL":
       if (textInput.value !== "") {
         textOutput.value = celToFah(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN FAHRENHEIT:";
+      outputMsg.innerHTML = "RESULT IN FAHRENHEIT";
       break;
     case "ACRE_SQFT":
       if (textInput.value !== "") {
         textOutput.value = squareftToAcre(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN ACRE:";
+      outputMsg.innerHTML = "RESULT IN ACRE";
       break;
     case "HR_SEC":
       if (textInput.value !== "") {
         textOutput.value = secToHr(textInput.value);
       }
-      outputMsg.innerHTML = "RESULT IN HOURS:";
+      outputMsg.innerHTML = "RESULT IN HOURS";
       break;
   }
 };
 
 btnEvent = (input) => {
   if (input === frontActionBtn) {
-    frontActionBtn.style.backgroundColor = "green";
+    frontActionBtn.style.backgroundColor = "#b7e4c7";
     reverseActionBtn.style.backgroundColor = "thistle";
-    outputMsg.innerHTML = "ENCODED URL:";
+    outputMsg.innerHTML = "ENCODED URL";
   } else if (input === hashBtn) {
-    hashBtn.style.backgroundColor = "green";
+    hashBtn.style.backgroundColor = "#b7e4c7";
   } else {
     frontActionBtn.style.backgroundColor = "thistle";
-    reverseActionBtn.style.backgroundColor = "green";
-    outputMsg.innerHTML = "DECODED URL:";
+    reverseActionBtn.style.backgroundColor = "#b7e4c7";
+    outputMsg.innerHTML = "DECODED URL";
   }
 };
 

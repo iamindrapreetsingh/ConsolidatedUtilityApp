@@ -1,11 +1,11 @@
 body {
   margin: 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: cornflowerblue;
+  background-color: #a0c4ff;
 }
 
 .header {
-  background-color: black;
+  background-color: #1d3557;
   width: 100%;
   height: 100px;
   display: flex;
@@ -77,7 +77,7 @@ body {
 .main-section {
   height: fit-content;
   width: fit-content;
-  margin-top: 5%;
+  margin-top: 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,37 +92,48 @@ body {
 }
 
 .hash-btn-div {
-  display: none;
-  background-color: green;
+  background-color: thistle;
+}
+
+.buttons {
+  background-color: thistle;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .front-action-btn {
-  background-color: green;
+  background-color: #b7e4c7;
   height: 50px;
-  width: 200px;
-  font-size: 13px;
+  width: 199px;
+  font-size: 15px;
+  border: none;
+  border-radius: 0px 0px 0px 12px;
   font-weight: bolder;
 }
 
 .reverse-action-btn {
   background-color: thistle;
   height: 50px;
-  width: 200px;
-  font-size: 13px;
+  width: 199px;
+  font-size: 15px;
   font-weight: bolder;
+  border: none;
+  border-radius: 0px 0px 12px 0px;
 }
 
 .hash-btn {
   background-color: thistle;
   height: 50px;
-  width: 407px;
+  width: 404px;
   font-size: 20px;
+  border: none;
+  border-radius: 0px 0px 12px 12px;
   font-weight: bolder;
 }
 
 .hash-btn-div {
-  border-radius: 12px;
+  display: none;
   border-color: black;
+  border-radius: 0px 0px 13px 13px;
 }
 
 .output-section {
@@ -131,37 +142,51 @@ body {
 
 .output-msg {
   width: 100%;
-  background-color: tomato;
+  background-color: #adb5bd;
   font-size: 20px;
   text-align: center;
   font-weight: bolder;
   border-color: black;
-  border-radius: 10px;
+  border-radius: 12px 12px 0px 0px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .textarea-input {
   width: 400px;
   height: 150px;
-  border-color: black;
-  border-radius: 10px;
-  box-shadow: 10px 10px black;
+  border-radius: 12px 12px 0px 0px;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .textarea-output {
   width: 400px;
   height: 150px;
-  border-color: black;
-  border-radius: 10px;
-  box-shadow: 10px 10px black;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .utility-info {
   position: relative;
   font-size: 40px;
-  top: 40px;
+  top: 20px;
 }
 
 @media (max-width: 600px) {
+  .front-action-btn {
+    font-size: 11px;
+  }
+
+  .reverse-action-btn {
+    font-size: 11px;
+  }
+
   .textarea-input {
     width: 300px;
   }
@@ -171,13 +196,11 @@ body {
   }
 
   .front-action-btn {
-    width: 150px;
-    font-size: 10px;
+    width: 149px;
   }
 
   .reverse-action-btn {
-    width: 150px;
-    font-size: 10px;
+    width: 149px;
   }
 
   .header {
