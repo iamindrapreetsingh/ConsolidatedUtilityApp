@@ -46,10 +46,37 @@ body {
   top: 40px;
 }
 
+.string-hasher :hover {
+  cursor: pointer;
+}
+
 .unit-converter {
   position: relative;
   top: 40px;
 }
+
+.unit-converter:hover {
+  cursor: pointer;
+}
+
+
+.timer-stopwatch-link{
+  position: relative;
+  top: 40px;
+}
+
+.timer-stopwatch-link:hover{
+  cursor: pointer;
+}
+
+.stopwatch-timer-main-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: yellow;
+  align-items: center;
+}
+
 
 .hasher-buttons {
   width: 100%;

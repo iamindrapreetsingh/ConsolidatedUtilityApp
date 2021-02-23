@@ -1,12 +1,119 @@
 let action = "ENCODE_DECODE";
 
 const btn = document.querySelector(".buttons");
+const mainSection = document.querySelector(".main-section");
 
 const frontActionBtn = document.querySelector(".front-action-btn");
 const reverseActionBtn = document.querySelector(".reverse-action-btn");
 const textInput = document.querySelector(".textarea-input");
 const outputMsg = document.querySelector(".output-msg");
 const textOutput = document.querySelector(".textarea-output");
+
+//Date and time Objects
+const dateAndTime = document.querySelector(".date-and-time");
+const timerStopwatchLink = document.querySelector(".timer-stopwatch-link");
+const stopwatchTimerMainSection = document.querySelector(".stopwatch-timer-main-section");
+const stopwatch = document.querySelector(".stopwatch");
+const start = document.querySelector("#start");
+const stop_ = document.querySelector("#stop");
+const pause = document.querySelector("#pause");
+const lapse = document.querySelector("#lapse");
+const hourLabel = document.querySelector("#hour-label");
+const minLabel =  document.querySelector("#min-label");
+const secLabel =  document.querySelector("#sec-label");
+const milSecLabel = document.querySelector("#mil-sec-label");
+
+//Date and time events
+timerStopwatchLink.addEventListener("click",()=>selectUtility("TIMER_AND_STOPWATCH"));
+
+start.addEventListener("click", ()=>stopwatchEvents("START"));
+stop_.addEventListener("click", ()=>stopwatchEvents("STOP"));
+pause.addEventListener("click", ()=>stopwatchEvents("PAUSE"));
+lapse.addEventListener("click", ()=>stopwatchEvents("LAPSE"));
+let isStart = false;
+let intervalId;
+
+//
+const showDateAndTime = ()=>
+{
+let date = new Date();
+dateAndTime.innerHTML =  `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+}
+
+setInterval(showDateAndTime, 1000);
+
+const stopwatchEventActions = (action)=>
+{
+    switch(action)
+    {
+      case "START":
+
+        //bde0fe
+
+        if(isStart)
+        {
+          start.value = "PAUSE";
+          isStart = false;
+        }
+        else
+        {
+          start.value = "START";
+          isStart = true;
+          clearInterval(intervalId);
+        }
+
+          if(isStart)
+          {
+          intervalId=setInterval(function()
+          {
+            secLabel.innerHTML = parseInt(secLabel.innerHTML) + 1;
+
+            if(secLabel.innerHTML==60)
+            {
+            minLabel.innerHTML = parseInt(minLabel.innerHTML) + 1;
+            secLabel.innerHTML = 1;
+            }
+
+            if(minLabel.innerHTML==60)
+            {
+            hourLabel.innerHTML = parseInt(hourLabel.innerHTML) + 1;
+            minLabel.innerHTML = 1;
+            } 
+
+          },1000);
+        }
+
+          break;
+      case "STOP":
+        console.log(action);
+        break;
+      case "PAUSE":
+        console.log(action);
+        break;
+      case "LAPSE":
+        console.log(action);
+        break;
+    }
+}
+
+stopwatchEvents =(action)=>
+{
+  switch(action.toUpperCase())
+  {
+    case "START":
+          stopwatchEventActions(action.toUpperCase());
+          break;
+    case "STOP":
+      console.log(action);
+      break;
+    case "PAUSE":
+      console.log(action);
+      break;
+    case "LAPSE":
+      console.log(action);
+  }
+}
+
 
 //Encoder Decoder objects
 const encodeDecodeLink = document.querySelector(".encode-decode-link");
@@ -151,6 +258,17 @@ selectUtility = (param) => {
   const clickTo = "CLICK TO";
   const convertFrom = "CONVERT FROM";
 
+  if(param==="TIMER_AND_STOPWATCH")
+  {
+    stopwatchTimerMainSection.style.display = "flex";
+    mainSection.style.display = "none"; 
+  }
+  else
+  {
+    stopwatchTimerMainSection.style.display = "none";
+    mainSection.style.display = "block";
+  }
+
   switch (param) {
     case "ENCODE_DECODE":
       frontActionBtn.value = `${clickTo} ENCODE`;
@@ -224,6 +342,9 @@ selectUtility = (param) => {
       utilityInfo.innerHTML = "HOUR &#8644 SECOND";
       btn.style.display = "block";
       hashBtnDiv.style.display = "none";
+      break;
+    case "TIMER_AND_STOPWATCH":
+      utilityInfo.innerHTML = "STOPWATCH &#8644 TIMER";
       break;
   }
 
