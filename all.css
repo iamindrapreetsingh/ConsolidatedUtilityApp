@@ -70,11 +70,29 @@ body {
 }
 
 .stopwatch-timer-main-section{
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
-  background-color: yellow;
   align-items: center;
+  text-align: center;
+}
+
+.date-and-time{
+
+font-size: 70px;
+font-weight: bolder;
+
+}  
+
+.stopwatch-btn
+{
+  background-color: #ff595e;
+  height: 30px;
+  width: 100px;
+  border-radius: 12px;
+  border-width: 0px;
+  color: white;
+  font-weight: bolder;
 }
 
 
@@ -244,4 +262,9 @@ body {
     font-size: 20px;
     top: 15px;
   }
+}
+
+a:link
+{
+  color: black;
 }
