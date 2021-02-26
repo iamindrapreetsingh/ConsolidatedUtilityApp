@@ -59,17 +59,16 @@ body {
   cursor: pointer;
 }
 
-
-.timer-stopwatch-link{
+.timer-stopwatch-link {
   position: relative;
   top: 40px;
 }
 
-.timer-stopwatch-link:hover{
+.timer-stopwatch-link:hover {
   cursor: pointer;
 }
 
-.stopwatch-timer-main-section{
+.stopwatch-timer-main-section {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -77,15 +76,12 @@ body {
   text-align: center;
 }
 
-.date-and-time{
+.date-and-time {
+  font-size: 70px;
+  font-weight: bolder;
+}
 
-font-size: 70px;
-font-weight: bolder;
-
-}  
-
-.stopwatch-btn
-{
+.stopwatch-btn {
   background-color: #ff595e;
   height: 30px;
   width: 100px;
@@ -94,7 +90,6 @@ font-weight: bolder;
   color: white;
   font-weight: bolder;
 }
-
 
 .hasher-buttons {
   width: 100%;
@@ -264,7 +259,6 @@ font-weight: bolder;
   }
 }
 
-a:link
-{
+a:link {
   color: black;
 }

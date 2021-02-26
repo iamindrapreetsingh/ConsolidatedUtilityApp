@@ -12,108 +12,102 @@ const textOutput = document.querySelector(".textarea-output");
 //Date and time Objects
 const dateAndTime = document.querySelector(".date-and-time");
 const timerStopwatchLink = document.querySelector(".timer-stopwatch-link");
-const stopwatchTimerMainSection = document.querySelector(".stopwatch-timer-main-section");
+const stopwatchTimerMainSection = document.querySelector(
+  ".stopwatch-timer-main-section"
+);
 const stopwatch = document.querySelector(".stopwatch");
 const start = document.querySelector("#start");
 const stop_ = document.querySelector("#stop");
 const pause = document.querySelector("#pause");
 const lapse = document.querySelector("#lapse");
 const hourLabel = document.querySelector("#hour-label");
-const minLabel =  document.querySelector("#min-label");
-const secLabel =  document.querySelector("#sec-label");
+const minLabel = document.querySelector("#min-label");
+const secLabel = document.querySelector("#sec-label");
 const milSecLabel = document.querySelector("#mil-sec-label");
+const lapseSection = document.querySelector(".lapse-section");
 
 //Date and time events
-timerStopwatchLink.addEventListener("click",()=>selectUtility("TIMER_AND_STOPWATCH"));
+timerStopwatchLink.addEventListener("click", () =>
+  selectUtility("TIMER_AND_STOPWATCH")
+);
 
-start.addEventListener("click", ()=>stopwatchEvents("START"));
-stop_.addEventListener("click", ()=>stopwatchEvents("STOP"));
-pause.addEventListener("click", ()=>stopwatchEvents("PAUSE"));
-lapse.addEventListener("click", ()=>stopwatchEvents("LAPSE"));
-let isStart = false;
+start.addEventListener("click", () => stopwatchEvents("START"));
+stop_.addEventListener("click", () => stopwatchEvents("STOP"));
+lapse.addEventListener("click", () => stopwatchEvents("LAPSE"));
+let isPause = true;
 let intervalId;
+let div;
 
 //
-const showDateAndTime = ()=>
-{
-let date = new Date();
-dateAndTime.innerHTML =  `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-}
+const showDateAndTime = () => {
+  let date = new Date();
+  dateAndTime.innerHTML = `${date.getDate()}-${
+    date.getMonth() + 1
+  }-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+};
 
 setInterval(showDateAndTime, 1000);
 
-const stopwatchEventActions = (action)=>
-{
-    switch(action)
-    {
-      case "START":
+const stopwatchEventActions = (action) => {
+  switch (action) {
+    case "START":
+      //bde0fe
 
-        //bde0fe
+      if (isPause) {
+        start.value = "PAUSE";
+        isPause = false;
+      } else {
+        start.value = "RESUME";
+        isPause = true;
+        clearInterval(intervalId);
+      }
 
-        if(isStart)
-        {
-          start.value = "PAUSE";
-          isStart = false;
-        }
-        else
-        {
-          start.value = "START";
-          isStart = true;
-          clearInterval(intervalId);
-        }
+      if (!isPause) {
+        intervalId = setInterval(function () {
+          secLabel.innerHTML = parseInt(secLabel.innerHTML) + 1;
 
-          if(isStart)
-          {
-          intervalId=setInterval(function()
-          {
-            secLabel.innerHTML = parseInt(secLabel.innerHTML) + 1;
-
-            if(secLabel.innerHTML==60)
-            {
+          if (secLabel.innerHTML == 60) {
             minLabel.innerHTML = parseInt(minLabel.innerHTML) + 1;
             secLabel.innerHTML = 1;
-            }
+          }
 
-            if(minLabel.innerHTML==60)
-            {
+          if (minLabel.innerHTML == 60) {
             hourLabel.innerHTML = parseInt(hourLabel.innerHTML) + 1;
             minLabel.innerHTML = 1;
-            } 
-
-          },1000);
-        }
-
-          break;
-      case "STOP":
-        console.log(action);
-        break;
-      case "PAUSE":
-        console.log(action);
-        break;
-      case "LAPSE":
-        console.log(action);
-        break;
-    }
-}
-
-stopwatchEvents =(action)=>
-{
-  switch(action.toUpperCase())
-  {
-    case "START":
-          stopwatchEventActions(action.toUpperCase());
-          break;
-    case "STOP":
-      console.log(action);
-      break;
-    case "PAUSE":
-      console.log(action);
+          }
+        }, 1000);
+      }
       break;
     case "LAPSE":
       console.log(action);
+      break;
   }
-}
+};
 
+stopwatchEvents = (action) => {
+  switch (action.toUpperCase()) {
+    case "START":
+      stopwatchEventActions(action.toUpperCase());
+      break;
+    case "STOP":
+      clearInterval(intervalId);
+      lapseSection.innerHTML = null;
+      hourLabel.innerHTML = "00";
+      minLabel.innerHTML = "00";
+      secLabel.innerHTML = "00";
+      start.value = "START";
+      isPause = true;
+      break;
+    case "LAPSE":
+      if (isPause == false) {
+        div = document.createElement("div");
+        div.style.fontSize = "40px";
+        div.innerHTML = `${hourLabel.innerHTML}:${minLabel.innerHTML}:${secLabel.innerHTML}`;
+        lapseSection.appendChild(div);
+        break;
+      }
+  }
+};
 
 //Encoder Decoder objects
 const encodeDecodeLink = document.querySelector(".encode-decode-link");
@@ -258,13 +252,10 @@ selectUtility = (param) => {
   const clickTo = "CLICK TO";
   const convertFrom = "CONVERT FROM";
 
-  if(param==="TIMER_AND_STOPWATCH")
-  {
+  if (param === "TIMER_AND_STOPWATCH") {
     stopwatchTimerMainSection.style.display = "flex";
-    mainSection.style.display = "none"; 
-  }
-  else
-  {
+    mainSection.style.display = "none";
+  } else {
     stopwatchTimerMainSection.style.display = "none";
     mainSection.style.display = "block";
   }
