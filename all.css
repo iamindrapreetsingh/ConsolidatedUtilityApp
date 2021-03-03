@@ -219,14 +219,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .front-action-btn {
-    font-size: 11px;
-  }
-
-  .reverse-action-btn {
-    font-size: 11px;
-  }
-
   .textarea-input {
     width: 300px;
   }
@@ -237,10 +229,12 @@ body {
 
   .front-action-btn {
     width: 149px;
+    font-size: 11px;
   }
 
   .reverse-action-btn {
     width: 149px;
+    font-size: 11px;
   }
 
   .header {
@@ -250,6 +244,11 @@ body {
   .hash-btn {
     width: 305px;
   }
+
+  .more-apps{
+    font-size: 12px;
+  }
+
 }
 
 @media (max-width: 700px) {
@@ -261,4 +260,14 @@ body {
 
 a:link {
   color: black;
+}
+
+.more-apps
+{
+  position: absolute; 
+  position: fixed; 
+  font-size: 20px; 
+  font-weight: bolder;
+  bottom: 2%; 
+  right: 2%;
 }
