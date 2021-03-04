@@ -218,7 +218,24 @@ body {
   top: 20px;
 }
 
+.more-apps
+{
+  position: absolute; 
+  position: fixed; 
+  font-size: 20px; 
+  font-weight: bolder;
+  bottom: 2%; 
+  right: 2%;
+}
+
 @media (max-width: 600px) {
+
+
+  .main-section
+  {
+    margin-top: 40px;
+  }
+
   .textarea-input {
     width: 300px;
   }
@@ -260,14 +277,4 @@ body {
 
 a:link {
   color: black;
-}
-
-.more-apps
-{
-  position: absolute; 
-  position: fixed; 
-  font-size: 20px; 
-  font-weight: bolder;
-  bottom: 2%; 
-  right: 2%;
 }
